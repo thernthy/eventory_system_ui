@@ -14,6 +14,7 @@ import DailyTraffic from 'components/admin/default/DailyTraffic';
 import TaskCard from 'components/admin/default/TaskCard';
 import tableDataCheck from 'variables/data-tables/tableDataCheck';
 import tableDataComplex from 'variables/data-tables/tableDataComplex';
+import DateSelector from 'components/admin/date_picker/date_selector';
 
 const Dashboard = () => {
   return (
@@ -78,6 +79,7 @@ const Dashboard = () => {
           <hr />
           <MiniCalendar />
           <PieChartCard />
+          <DateSelector />
         </div>
       </div>
 
