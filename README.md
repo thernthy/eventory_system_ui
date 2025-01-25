@@ -1,15 +1,3 @@
-# [Horizon UI Tailwind CSS NextJS ⚡️](https://horizon-ui.com/horizon-tailwind-react-nextjs) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=Check%20Horizon%20UI,%20the%20trendiest%20open-source%20admin%20dashboard%20template%20for%20Tailwind%20CSS,%20React%20JS%20and%20NextJS%20-%20https%3A//horizon-ui.com/)
-
-![version](https://img.shields.io/badge/version-3.0.0-blue.svg)
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-[![GitHub issues open](https://img.shields.io/github/issues/horizon-ui/horizon-tailwind-react-nextjs.svg?maxAge=2592000)](https://github.com/horizon-ui/horizon-tailwind-react-nextjs/issues?q=is%3Aopen+is%3Aissue)
-
-<p>&nbsp;</p>
-
-[<img alt="Horizon UI Tailwind CSS NextJS" src="https://i.ibb.co/mtLkcYL/horizon-ui-nextjs-free.png" /> ](https://github.com/horizon-ui/horizon-tailwind-react-nextjs)
-
-<p>&nbsp;</p>
-
 Get started and build your dream web app with Horizon UI Tailwind CSS NextJS, the trendiest & innovative Open Source Admin Template for Tailwind CSS, React & NextJS!
 
 ---
