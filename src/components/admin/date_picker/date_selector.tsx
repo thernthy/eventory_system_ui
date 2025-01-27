@@ -11,15 +11,18 @@ import {
 } from 'date-fns';
 import { km, enUS } from 'date-fns/locale';
 
+import { useTranslation } from 'react-i18next';
+import { MdOutlineArrowDropDown } from 'react-icons/md';
 const DateSelector = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [locale, setLocale] = useState('en');
+  const { i18n, t } = useTranslation();
+  const [locale, setLocale] = useState(i18n.language);
+
   const [selectedDay, setSelectedDay] = useState(null);
   const [isMonthDropdownOpen, setMonthDropdownOpen] = useState(false);
   const [isYearDropdownOpen, setYearDropdownOpen] = useState(false);
-
-  const currentLocale = locale === 'km' ? km : enUS;
-
+  const currentLocale = locale === 'kh' ? km : enUS;
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   // Get the days of the current month
   const startDate = startOfMonth(selectedDate);
   const endDate = endOfMonth(selectedDate);
@@ -55,26 +58,42 @@ const DateSelector = () => {
   };
 
   return (
-    <div className="rounded-lg p-4">
+    <div className="rounded-lg">
+      <h1 className="mb-3 text-2xl text-white">
+        <b>
+          {t(`months.${getMonth(selectedDate)}`)}{' '}
+          <span className="custom-font">{getYear(selectedDate)}</span>
+        </b>
+      </h1>
+      <hr className="border-26-op mb-2" />
       {/* Header Section */}
-      <div className="mb-4 flex items-center gap-3">
+      <div className="mb-4 flex items-center gap-3 ">
         {/* Month Selector */}
         <div className="relative">
           <div
-            className="cursor-pointer rounded-lg bg-gray-700 px-4 py-2 text-white"
+            className="flex cursor-pointer flex-row items-center justify-around rounded-lg px-4 py-2 text-white"
             onClick={() => setMonthDropdownOpen(!isMonthDropdownOpen)}
           >
-            {months[getMonth(selectedDate)]}
+            <b>{t(`months.${getMonth(selectedDate)}`)}</b>
+            <MdOutlineArrowDropDown className="text-3xl" />
           </div>
           {isMonthDropdownOpen && (
-            <div className="absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg  shadow-lg">
+            <div className="absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg bg-white shadow-lg">
               {months.map((month, index) => (
                 <div
-                  key={index}
+                  key={month} // Use the month name as the key for better performance
+                  role="button"
+                  tabIndex={0}
                   className="cursor-pointer px-4 py-2 hover:bg-gray-200"
                   onClick={() => handleMonthChange(index)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleMonthChange(index); // Trigger onEnter for accessibility
+                    }
+                  }}
                 >
-                  {month}
+                  {t(`months.${index}`)}{' '}
+                  {/* Use i18next to translate the month name */}
                 </div>
               ))}
             </div>
@@ -84,10 +103,11 @@ const DateSelector = () => {
         {/* Year Selector */}
         <div className="relative">
           <div
-            className="cursor-pointer rounded-lg bg-gray-700 px-4 py-2 text-white"
+            className="flex cursor-pointer flex-row items-center justify-around rounded-lg px-4 py-2 text-white "
             onClick={() => setYearDropdownOpen(!isYearDropdownOpen)}
           >
             {getYear(selectedDate)}
+            <MdOutlineArrowDropDown className="text-3xl" />
           </div>
           {isYearDropdownOpen && (
             <div className="absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg bg-white shadow-lg">
@@ -107,11 +127,10 @@ const DateSelector = () => {
 
       {/* Calendar Grid */}
       <div className="grid grid-cols-7 gap-2 text-center font-semibold">
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
+        {daysOfWeek.map((day, index) => (
           <div key={index} className="text-white">
-            {format(new Date(2023, 0, index + 1), 'EEE', {
-              locale: currentLocale,
-            })}
+            {t(`days.${day}`)}{' '}
+            {/* This will fetch the translation for each day */}
           </div>
         ))}
       </div>

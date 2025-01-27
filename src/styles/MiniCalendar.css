@@ -4,7 +4,6 @@
 div.react-calendar {
   border: 0px solid !important;
   background-color: transparent;
-  font-family: 'DM Sans', sans-serif;
   width: 100%;
 }
 button.react-calendar__tile--now,

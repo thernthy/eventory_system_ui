@@ -15,8 +15,13 @@ import TaskCard from 'components/admin/default/TaskCard';
 import tableDataCheck from 'variables/data-tables/tableDataCheck';
 import tableDataComplex from 'variables/data-tables/tableDataComplex';
 import DateSelector from 'components/admin/date_picker/date_selector';
-
+import Apple from 'components/icons/Apple';
+import { useTranslation } from 'react-i18next';
 const Dashboard = () => {
+  const { t } = useTranslation();
+  const truncateText = (text: string, maxLength: number): string => {
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  };
   return (
     <div>
       {/* Card widget */}
@@ -74,12 +79,37 @@ const Dashboard = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className="space-y-4 rounded-lg bg-teal-500 p-4">
-          <h1>ឧសភា 2025</h1>
-          <hr />
-          <MiniCalendar />
-          <PieChartCard />
+        <div className="bg-00A5A5 space-y-4 rounded-lg p-4">
           <DateSelector />
+          <PieChartCard />
+          <div className="mt-4 flex flex-col gap-3 pb-3">
+            <div className="">
+              <h1 className="pb-2 text-2xl text-white">
+                <b>ទំនិញលក់</b>
+              </h1>
+              <hr className="border-26-op" />
+            </div>
+            <div className="sold-list bg-03B1B1 grid grid-cols-6 items-center gap-3 rounded-lg p-2 text-white">
+              <div>
+                <img
+                  width="80"
+                  src="https://t4.ftcdn.net/jpg/02/52/93/81/360_F_252938192_JQQL8VoqyQVwVB98oRnZl83epseTVaHe.jpg"
+                />
+              </div>
+              <b>$10</b>
+              <div
+                className="product_title col-span-2"
+                title={'Apple Images – Browse 4,720,513 Stock Photos'}
+              >
+                {truncateText(
+                  'Apple Images – Browse 4,720,513 Stock Photos',
+                  20,
+                )}
+              </div>
+
+              <div className="sold-status">{t('sold')}</div>
+            </div>
+          </div>
         </div>
       </div>
 

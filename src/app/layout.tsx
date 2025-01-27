@@ -1,13 +1,11 @@
 import React, { ReactNode } from 'react';
-import AppWrappers from './AppWrappers';
-// import '@asseinfo/react-kanban/dist/styles.css';
-// import '/public/styles/Plugins.css';
+import AppWrappers from './AppWrappers'; // Import the AppWrappers component
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="kh">
       <body id={'root'}>
-        <AppWrappers>{children}</AppWrappers>
+        <AppWrappers>{children}</AppWrappers>{' '}
       </body>
     </html>
   );

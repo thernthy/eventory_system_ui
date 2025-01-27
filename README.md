@@ -15,13 +15,13 @@ npm install
 Install react i18 translation:
 
 ```bash
-npm install date-fns react-i18next i18next
+npm install i18next react-i18next i18next-browser-languagedetector
 ```
 
 Then run this command to start your local server
 
 ```bash
-npm dev
+npm run dev
 ```
 
 ### View
