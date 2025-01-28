@@ -23,3 +23,41 @@ option {
   font-size: 32px;
   font-style: normal;
 }
+
+.btn-status {
+  padding: 3px 6px;
+  border-radius: 10px 10px 0px 14px;
+  cursor: pointer;
+}
+
+.btn-status-success {
+  background-color: #49bc9d;
+}
+.btn-status-pedding {
+  background-color: #f1bc19;
+}
+.btn-status-delete {
+  background-color: #ee5b6c;
+}
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+.scrollbar-2-px {
+  scrollbar-width: thin; /* Firefox: Makes the scrollbar thinner */
+  -ms-overflow-style: none; /* Internet Explorer 10+: Hides the scrollbar */
+  scrollbar-color: #00a5a5 orange;
+}
+
+.scrollbar-2-px::-webkit-scrollbar {
+  width: 2px; /* Chrome, Safari, and Opera: Set scrollbar width */
+}
+
+.scrollbar-2-px::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Customize scrollbar thumb color */
+  border-radius: 10px; /* Add rounded corners */
+}

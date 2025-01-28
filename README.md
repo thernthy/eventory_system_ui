@@ -18,6 +18,12 @@ Install react i18 translation:
 npm install i18next react-i18next i18next-browser-languagedetector
 ```
 
+Install Component Animation transactoin:
+
+```bash
+npm npm install framer-motion
+```
+
 Then run this command to start your local server
 
 ```bash

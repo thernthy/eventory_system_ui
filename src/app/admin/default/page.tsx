@@ -89,25 +89,159 @@ const Dashboard = () => {
               </h1>
               <hr className="border-26-op" />
             </div>
-            <div className="sold-list bg-03B1B1 grid grid-cols-6 items-center gap-3 rounded-lg p-2 text-white">
+
+            <div className="sold-list bg-03B1B1 flex flex-row items-center gap-3 rounded-lg p-2 text-white">
               <div>
                 <img
-                  width="80"
+                  width="60"
                   src="https://t4.ftcdn.net/jpg/02/52/93/81/360_F_252938192_JQQL8VoqyQVwVB98oRnZl83epseTVaHe.jpg"
                 />
               </div>
-              <b>$10</b>
+              <b>
+                <span className=" text-sm text-yellow-500">$</span>10
+              </b>
               <div
-                className="product_title col-span-2"
+                className="product_title"
                 title={'Apple Images – Browse 4,720,513 Stock Photos'}
               >
                 {truncateText(
                   'Apple Images – Browse 4,720,513 Stock Photos',
-                  20,
+                  25,
                 )}
               </div>
 
-              <div className="sold-status">{t('sold')}</div>
+              <div className="sold-status btn-status btn-status-success">
+                {t('sold')}
+              </div>
+            </div>
+            <div className="sold-list bg-03B1B1 flex flex-row items-center gap-3 rounded-lg p-2 text-white">
+              <div>
+                <img
+                  width="60"
+                  src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/07/Red-Apple-vector-PNG.png"
+                />
+              </div>
+              <b>
+                <span className=" text-sm text-yellow-500">$</span>15
+              </b>
+              <div
+                className="product_title"
+                title={'Apple Images – Browse 4,720,513 Stock Photos'}
+              >
+                {truncateText(
+                  'Apple Images – Browse 4,720,513 Stock Photos',
+                  25,
+                )}
+              </div>
+
+              <div className="sold-status btn-status btn-status-success">
+                {t('sold')}
+              </div>
+            </div>
+            <div className="sold-list bg-03B1B1 flex flex-row items-center gap-3 rounded-lg p-2 text-white">
+              <div>
+                <img
+                  width="60"
+                  src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/07/Red-Apple-vector-PNG.png"
+                />
+              </div>
+              <b>
+                <span className=" text-sm text-yellow-500">$</span>15
+              </b>
+              <div
+                className="product_title"
+                title={'Apple Images – Browse 4,720,513 Stock Photos'}
+              >
+                {truncateText(
+                  'Apple Images – Browse 4,720,513 Stock Photos',
+                  25,
+                )}
+              </div>
+
+              <div className="sold-status btn-status btn-status-success">
+                {t('sold')}
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex flex-col gap-3 pb-3">
+            <div className="">
+              <h1 className="pb-2 text-2xl text-white">
+                <b>ទំនិញបញ្ជាទិញ</b>
+              </h1>
+              <hr className="border-26-op" />
+            </div>
+
+            <div className="sold-list bg-03B1B1 flex flex-row items-center gap-3 rounded-lg p-2 text-white">
+              <div>
+                <img
+                  width="60"
+                  src="https://t4.ftcdn.net/jpg/02/52/93/81/360_F_252938192_JQQL8VoqyQVwVB98oRnZl83epseTVaHe.jpg"
+                />
+              </div>
+              <b>
+                <span className=" text-sm text-yellow-500">$</span>10
+              </b>
+              <div
+                className="product_title"
+                title={'Apple Images – Browse 4,720,513 Stock Photos'}
+              >
+                {truncateText(
+                  'Apple Images – Browse 4,720,513 Stock Photos',
+                  25,
+                )}
+              </div>
+
+              <div className="sold-status btn-status btn-status-pedding">
+                {t('sold')}
+              </div>
+            </div>
+            <div className="sold-list bg-03B1B1 flex flex-row items-center gap-3 rounded-lg p-2 text-white">
+              <div>
+                <img
+                  width="60"
+                  src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/07/Red-Apple-vector-PNG.png"
+                />
+              </div>
+              <b>
+                <span className=" text-sm text-yellow-500">$</span>15
+              </b>
+              <div
+                className="product_title"
+                title={'Apple Images – Browse 4,720,513 Stock Photos'}
+              >
+                {truncateText(
+                  'Apple Images – Browse 4,720,513 Stock Photos',
+                  25,
+                )}
+              </div>
+
+              <div className="sold-status btn-status btn-status-success">
+                {t('sold')}
+              </div>
+            </div>
+            <div className="sold-list bg-03B1B1 flex flex-row items-center gap-3 rounded-lg p-2 text-white">
+              <div>
+                <img
+                  width="60"
+                  src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/07/Red-Apple-vector-PNG.png"
+                />
+              </div>
+              <b>
+                <span className=" text-sm text-yellow-500">$</span>15
+              </b>
+              <div
+                className="product_title"
+                title={'Apple Images – Browse 4,720,513 Stock Photos'}
+              >
+                {truncateText(
+                  'Apple Images – Browse 4,720,513 Stock Photos',
+                  25,
+                )}
+              </div>
+
+              <div className="sold-status btn-status btn-status-delete">
+                {t('sold')}
+              </div>
             </div>
           </div>
         </div>

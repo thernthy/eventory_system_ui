@@ -10,7 +10,7 @@ import {
   getMonth,
 } from 'date-fns';
 import { km, enUS } from 'date-fns/locale';
-
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
 const DateSelector = () => {
@@ -78,13 +78,23 @@ const DateSelector = () => {
             <MdOutlineArrowDropDown className="text-3xl" />
           </div>
           {isMonthDropdownOpen && (
-            <div className="absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg bg-white shadow-lg">
+            <motion.div
+              className="  bg-03B1B1 scrollbar-2-px absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg p-6 shadow-lg"
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 50,
+                damping: 10,
+                duration: 0.8,
+              }}
+            >
               {months.map((month, index) => (
                 <div
                   key={month} // Use the month name as the key for better performance
                   role="button"
                   tabIndex={0}
-                  className="cursor-pointer px-4 py-2 hover:bg-gray-200"
+                  className="cursor-pointer px-4 py-2 text-white hover:text-teal-800"
                   onClick={() => handleMonthChange(index)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -96,7 +106,7 @@ const DateSelector = () => {
                   {/* Use i18next to translate the month name */}
                 </div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
 
@@ -110,17 +120,27 @@ const DateSelector = () => {
             <MdOutlineArrowDropDown className="text-3xl" />
           </div>
           {isYearDropdownOpen && (
-            <div className="absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg bg-white shadow-lg">
+            <motion.div
+              className="  bg-03B1B1 scrollbar-2-px absolute z-10 mt-2 max-h-40 w-40 overflow-y-auto rounded-lg p-6 shadow-lg"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 50,
+                damping: 10,
+                duration: 0.8,
+              }}
+            >
               {yearRange.map((year) => (
                 <div
                   key={year}
-                  className="cursor-pointer px-4 py-2 hover:bg-gray-200"
+                  className="cursor-pointer px-4 py-2 text-white hover:text-teal-800"
                   onClick={() => handleYearChange(year)}
                 >
                   {year}
                 </div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -130,7 +150,6 @@ const DateSelector = () => {
         {daysOfWeek.map((day, index) => (
           <div key={index} className="text-white">
             {t(`days.${day}`)}{' '}
-            {/* This will fetch the translation for each day */}
           </div>
         ))}
       </div>
